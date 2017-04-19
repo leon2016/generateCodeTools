@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html lang="ch">
+<head>
+<meta charset="UTF-8" />
+<title>freeMarker各种取值表达式， 标签或者自定义标签使用demo</title>
+</head>
+<body>
+	<h1>取值表达式</h1>
+	<div>
+		<h3>输出变量名${r'${value}'}</h3>
+		<div>${text}</div>
+	</div>
+	<h1>标签${r'<#标签名称>'}</h1>
+	<div>
+		<h3>list、if标签使用</h3>
+		<div>
+		 集合大小:${nameList?size}<br/>
+		<#list nameList as names> 
+		序号：${names_index+1} 值：${names} 
+		判断结果：
+			<#if (names=="A")> 
+				他是A
+	 		<#elseif (names=="B")>
+				<#--这是注释--> 他是B 
+			<#else> 他非A非B </#if>
+		</#list>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+<!-- <title>insert title here</title> -->
+<!-- </head> -->
+<!-- <body> -->
+
+<!-- 	描述：${description} -->
+<!-- 	<br /> 集合大小:${nameList?size} -->
+<!-- 	<br /> 迭代list集合： -->
+<!-- 	<br /> <#list nameList as names> 这是第${names_index+1}个人，叫做： -->
+<!-- 	<label style="color: red">${names}</label> if判断： -->
+<!-- 	<br />  -->
+<!-- 	<br /> </#list> 迭代map集合： -->
+<!-- 	<br /> <#list weaponMap?keys as key> key--->${key} -->
+<!-- 	<br /> value----->${weaponMap[key]!("null")} <#-- fremarker 不支持null, -->
+<!-- 	可以用！ 来代替为空的值。 其实也可以给一个默认值 value-----${weaponMap[key]?default("null")} -->
+<!-- 	还可以 在输出前判断是否为null <#if weaponMap[key]??></#if>都可以 --> -->
+
+<!-- 	<br /> </#list> -->
+<!-- </body> -->
+<!-- </html> -->
